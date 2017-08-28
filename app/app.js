@@ -2,13 +2,23 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+    'ngRoute',
+    'myApp.weathers',
+    'myApp.settings',
+    'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+        $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+        $routeProvider.otherwise({ redirectTo: '/weathers' });
+    }])
+    /* .
+    controller('homeCtrl', ['$scope', function($scope) {
+        $scope = {
+            appTitle: 'WeatherAppJS',
+            weathers: 'Weathers',
+            settings: 'Settings',
+            footerText: 'Created by Luc Debène'
+        };
+    }]) */
+;
