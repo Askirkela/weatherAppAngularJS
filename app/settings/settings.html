@@ -1,5 +1,12 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<h2>
+    Settings
+</h2>
+<div class="form-inline">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-addon">Add new city : </span>
+            <input #city id="addWidget" class="form-control" />
+        </div>
+        <button (click)="add(city.value); city.value='';" class="btn btn-default"> Add </button>
+    </div>
+</div>

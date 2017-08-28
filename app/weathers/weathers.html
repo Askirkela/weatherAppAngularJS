@@ -1,1 +1,9 @@
-<p>This is the partial for view 1.</p>
+<div class="container">
+    <h2>{{ welcome }}</h2>
+    Toto
+    <ul class="list-inline">
+        <li class="container col-md-4 col-sm-6 col-lg-3 col-xs-12" ng-repeat="widget in widgets">
+            <app-widget [weather]="widget"></app-widget>
+        </li>
+    </ul>
+</div>

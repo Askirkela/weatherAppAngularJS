@@ -22,19 +22,32 @@
 </head>
 
 <body>
-    <ul class="menu">
-        <li><a href="#!/weathers">Weathers</a></li>
-        <li><a href="#!/settings">Settings</a></li>
-    </ul>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <span class="navbar-brand" href="#"> WeatherAppJS </span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#!/weathers">Weathers</a></li>
+                    <li><a href="#!/settings">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
-    <div ng-view></div>
-
-    <div>Angular seed app: v<span app-version></span></div>
-
+    <div class="container">
+        <div ng-view></div>
+    </div>
     <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -43,6 +56,7 @@
     <script src="app.js"></script>
     <script src="weathers/weathers.js"></script>
     <script src="settings/settings.js"></script>
+    <script src="widget/widget.js"></script>
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>
