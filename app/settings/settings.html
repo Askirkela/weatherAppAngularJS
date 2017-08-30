@@ -3,10 +3,12 @@
 </h2>
 <div class="form-inline">
     <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon">Add new city : </span>
-            <input #city id="addWidget" class="form-control" />
-        </div>
-        <button (click)="add(city.value); city.value='';" class="btn btn-default"> Add </button>
+        <form ng-submit="add(city)">
+            <div class="input-group">
+                <span class="input-group-addon">Add new city : </span>
+                <input #city id="addWidget" class="form-control" />
+            </div>
+            <button type="submit"> <!-- onClick="this.add(city.value); city.value='';" class="btn btn-default" --> Add </button>
+        </form>
     </div>
 </div>
