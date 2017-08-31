@@ -12,6 +12,11 @@ angular.module('myApp', [
 
         $routeProvider.otherwise({ redirectTo: '/weathers' });
     }])
+    .controller('homeCtrl', function($scope) {
+        $scope.appTitle = 'WeatherAppJS';
+        $scope.weatherPage = 'Weathers';
+        $scope.settingsPage = 'Settings';
+    })
     .service('WeatherService', ['$http', function($http) {
         var url = 'https://api.openweathermap.org/data/2.5/weather?q=';
         var apiKeyString = '&APPID=dc393667966650c4415b7190103fcc7d';

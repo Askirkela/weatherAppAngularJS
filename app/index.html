@@ -3,13 +3,13 @@
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js">
+<html lang="en" ng-app="myApp" class="no-js" ng-controller="homeCtrl">
 <!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>WeatherAppJS</title>
+    <title>{{appTitle}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -31,12 +31,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <span class="navbar-brand" href="#"> WeatherAppJS </span>
+                <span class="navbar-brand" href="#"> {{appTitle}} </span>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#!/weathers">Weathers</a></li>
-                    <li><a href="#!/settings">Settings</a></li>
+                    <li><a href="#!/weathers">{{weatherPage}}</a></li>
+                    <li><a href="#!/settings">{{settingsPage}}</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +46,6 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
     <div class="container">
-        <i class="wi wi-owm-403"></i>
         <div ng-view></div>
     </div>
     <!-- In production use:
