@@ -10,6 +10,9 @@ angular.module('myApp.weathers', ['ngRoute'])
 }])
 
 .controller('weathersCtrl', function($scope, WeatherService) {
-    $scope.welcome = 'Welcome';
     $scope.widgets = WeatherService.getWeather();
+    $scope.delete = function(name) {
+        WeatherService.delete(name);
+        $scope.widgets = WeatherService.getWeather();
+    };
 });
