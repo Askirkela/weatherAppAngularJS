@@ -9,9 +9,15 @@ angular.module('myApp.settings', ['ngRoute'])
     });
 }])
 
-.controller('settingsCtrl', function(WeatherService) {
-    this.add = function(city) {
-        WeatherService.create(city);
-        console.log('Created ' + city);
+.controller('settingsCtrl', function($scope, WeatherService) {
+    $scope.addNewString = 'Add new city : ';
+    $scope.addString = 'Add';
+    $scope.currWidgetsString = 'Current widgets :';
+    $scope.widgets = WeatherService.getWeather();
+    $scope.addCity = function() {
+        if ($scope.city !== '') {
+            WeatherService.create($scope.city);
+        }
+        $scope.widgets = WeatherService.getWeather();
     };
 });
