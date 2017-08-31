@@ -10,6 +10,7 @@ angular.module('myApp.weathers', ['ngRoute'])
 }])
 
 .controller('weathersCtrl', function($scope, WeatherService) {
+    $scope.addCity = 'You may want to add a new city. Go to the settings page.';
     $scope.widgets = WeatherService.getWeather();
     $scope.delete = function(id) {
         WeatherService.delete(id);
