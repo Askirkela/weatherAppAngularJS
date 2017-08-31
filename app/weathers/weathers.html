@@ -1,15 +1,18 @@
 <ul class="list-inline">
-    <li class="container col-md-4 col-sm-6 col-lg-3 col-xs-12" ng-repeat="widget in widgets">
+    <li class="col-md-4 col-sm-6 col-lg-3 col-xs-12" ng-repeat="widget in widgets">
         <div class="well">
             <p class="text-center">
                 <strong>{{ widget.name }}, {{ widget.country | uppercase }}</strong>
-                <a class="text-right btn btn-xs btn-danger" ng-click="delete(widget.name); $event.stopPropagation()">X</a>
+                <a class="text-right btn btn-xs btn-danger" ng-click="delete(widget.id); $event.stopPropagation()">X</a>
             </p>
             <div class="text-center">
                 <i ng-class="widget.weatherIcon"></i>
+            </div>
+            <div class="text-center">
                 <span>{{ widget.temp }}</span>
                 <span class="text-center">{{ widget.desc | uppercase }}</span>
             </div>
         </div>
+        <div class="clearfix visible-xs-block visible-sm-block visible-md-block visible-lg-block"></div>
     </li>
 </ul>

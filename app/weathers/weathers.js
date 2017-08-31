@@ -11,8 +11,8 @@ angular.module('myApp.weathers', ['ngRoute'])
 
 .controller('weathersCtrl', function($scope, WeatherService) {
     $scope.widgets = WeatherService.getWeather();
-    $scope.delete = function(name) {
-        WeatherService.delete(name);
+    $scope.delete = function(id) {
+        WeatherService.delete(id);
         $scope.widgets = WeatherService.getWeather();
     };
 });
