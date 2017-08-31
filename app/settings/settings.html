@@ -3,12 +3,18 @@
 </h2>
 <div class="form-inline">
     <div class="form-group">
-        <form ng-submit="add(city)">
-            <div class="input-group">
-                <span class="input-group-addon">Add new city : </span>
-                <input #city id="addWidget" class="form-control" />
-            </div>
-            <button type="submit"> <!-- onClick="this.add(city.value); city.value='';" class="btn btn-default" --> Add </button>
-        </form>
+        <div class="input-group">
+            <span class="input-group-addon"> {{addNewString}} </span>
+            <input type="text" ng-model="city" class="form-control" />
+        </div>
+        <a ng-click="addCity(); city='';" class="btn btn-default"> {{addString}} </a>
+    </div>
+    <div ng-if="widgets.length > 0" class="container">
+        <strong>{{currWidgetsString}}</strong>
+        <ul class="list-inline">
+            <li class="container col-md-2 col-sm-3 col-lg-1 col-xs-4" ng-repeat="widget in widgets">
+                {{widget.name}}
+            </li>
+        </ul>
     </div>
 </div>
